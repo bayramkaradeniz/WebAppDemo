@@ -1,4 +1,5 @@
-﻿
+﻿@using WebAppDemo.Models.Classes;
+@model List<MemberCategory>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -7,14 +8,22 @@
 <table class=" table table-bordered" style="margin-left:20px;margin-top:20px;margin-right:20px">
     <tr>
         <th>Id</th>
-        <th>Name</th>
+        <th>Category</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Vip</td>
-    </tr> <tr>
-        <td>2</td>
-        <td>Normal</td>
-    </tr>
+    @foreach (var c in Model)
+    {
+
+        <tr>
+            <td>
+                @c.CategoryId
+            </td><td>
+                @c.CategoryName
+            </td>
+            <td><a href="/Category/DeleteCategory/@c.CategoryId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Category/GetCategory/@c.CategoryId" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+
 </table>
-<button class="btn d-block btn-primary" style="margin-left:20px" >New Category</button>
+<a href="/Category/AddCategory" class="btn btn-primary" style="margin-left:20px">Add Category</a>

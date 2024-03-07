@@ -1,6 +1,6 @@
 ﻿@model WebAppDemo.Models.Classes.MemberCategory
 @{
-    ViewBag.Title = "AddCategory";
+    ViewBag.Title = "GetCategory";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
@@ -10,7 +10,7 @@
 {
     <div class="form-group">
         @Html.LabelFor(x => x.CategoryName)
-        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-contorl" })
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
         @Html.HiddenFor(x => x.CategoryId)
     </div>
     <button class="btn btn-warning">Güncelle</button>
